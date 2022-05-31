@@ -2,10 +2,10 @@
 
 // fun fact in the extension es7 has differnet sinippits of code to set up each component and more this component was made using the code rfce
 // u4 generates new ids 
-import {motion } from 'framer-motion';
-import {u4 as uuidv4} from 'uuid';
+// import {motion } from 'framer-motion';
+// import {u4 as uuidv4} from 'uuid';
 
-import { BrowserRouter as Router, Switch, Route , Routes, NavLink} from "react-router-dom";
+import { BrowserRouter as Router, Route , Routes, NavLink} from "react-router-dom";
 import { useState} from 'react';
 import Card from './shared/Card';
 import './App.css';
@@ -17,7 +17,7 @@ import FeedbackForm from "./components/FeedbackForm";
 import AboutPage from "./pages/AboutPage"
 import AboutIconLink from './components/AboutIconLink';
 import Posts from './components/Posts';
-import PostsexampleRedirect from './components/PostsexampleRedirect';
+// import PostsexampleRedirect from './components/PostsexampleRedirect';
 // import FeedbackItem from "./components/FeedbackItem";
 
 
@@ -57,8 +57,18 @@ const deleteFeedback = (id) => {
           <AboutIconLink />
         </>}/>
         <Route path="/about" element={<AboutPage />} />
+        <Route path ='/post/:id/:name' element ={<Posts/>}/> 
       </Routes>
-      
+      <Card>
+    <NavLink to='/' acitveClassName ='acitve'>
+    Home
+    </NavLink>
+     <NavLink to='/about' acitveClassName ='acitve'>
+    About
+    </NavLink>
+    </Card> 
+{/* <PostsexampleRedirect/>
+       */}
     </Router>
     </>
   </div>
@@ -68,44 +78,4 @@ const deleteFeedback = (id) => {
   }
 export default App;
 
-// <div>
-  //   <Router>
-  //   <Header />
-  //   <div className ='container'>
-  //     <FeedbackForm  handleAdd ={addFeedback}/>
-  //     <FeedbackStats feedback={feedback}/>
-  //     <FeedbackList feedback={feedback}
-  //    handleDelete ={deleteFeedback}/>
-  //     <Routes>
-     {/* <FeedbackItem/> */}
-     {/* <Route exact path ='/'
-    > */}
-     
-     {/* </Route> */}
-     {/* <AboutPage/> */}
-     {/* <Posts/>
-     <PostsexampleRedirect/>
-      */}
-    /* ------ this is used instead of component because the new update for Routes */
-    //  <Route path="/about" element={<AboutPage/>}/>
-      {/* <Route path ='/post/:id/:name' element ={<Post/>}/> */}
-     
-    
-    // </Routes>
-      {/* this how you pass in the pages  */}
-    
-    //  <AboutIconLink /> 
-    // </div>
 
-    {/* <Card>
-    <NavLink to='/' acitveClassName ='acitve'>
-    Home
-    </NavLink>
-     <NavLink to='/about' acitveClassName ='acitve'>
-    About
-    </NavLink>
-    </Card> */}
-
-    // </Router>
-
-  //  </div>
