@@ -42,20 +42,20 @@ const deleteFeedback = (id) => {
  
 
   return (
-  <div>
+  <div className="container">
     <>
     <Router>
       <Header />
       <Routes>
         <Route 
         path="/"
-        element={<>
+        element={<div>
         <FeedbackForm  handleAdd ={addFeedback}/>
         <FeedbackStats feedback={feedback}/>
         <FeedbackList feedback={feedback}
           handleDelete ={deleteFeedback}/>
           <AboutIconLink />
-        </>}/>
+        </div>}/>
         <Route path="/about" element={<AboutPage />} />
         <Route path ='/post/:id/:name' element ={<Posts/>}/> 
       </Routes>
